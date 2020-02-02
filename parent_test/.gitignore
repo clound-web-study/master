@@ -5,6 +5,8 @@
 # IntelliJ project files
 *.iml
 */target
+.idea
+.idea/*.xml
 out
 gen
 ### Coq template

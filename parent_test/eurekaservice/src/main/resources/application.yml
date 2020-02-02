@@ -4,10 +4,8 @@ eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
+    registerWithEureka: false
+    #默认会把自己注册到注册中心
+    fetchRegistry: false
+    serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-spring:
-  main:
-    allow-bean-definition-overriding: true

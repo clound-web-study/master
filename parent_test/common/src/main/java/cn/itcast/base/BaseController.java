@@ -1,11 +1,9 @@
 package cn.itcast.base;
 
 import com.alibaba.fastjson.JSONObject;
-import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-@Component
 public class BaseController implements Serializable {
 
     private static final long serialVersionUID = 5494875772424381242L;
