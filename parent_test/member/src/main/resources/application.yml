@@ -1,0 +1,27 @@
+server:
+  port: 8080
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application: member
+  #redis 配置
+  spring:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+      jedis:
+        pool:
+          max-idle: 100 #最大空闲连接数
+          min-idle: 50 #最小空闲连接数
+          max-wait: -1s #等待可用连接的最大是事件 负数为不限制
+          max-active: -1 #最大活跃连接数 负数为不限制

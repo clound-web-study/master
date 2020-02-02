@@ -39,6 +39,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
         <!--集成aop-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -122,8 +123,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
-            <version>2.1.2.RELEASE</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
         <!--<dependency>
@@ -136,6 +136,14 @@
             <artifactId>spring-cloud-openfeign-dependencies</artifactId>
             <version>2.1.2.RELEASE</version>
         </dependency>
+
+        <!-- 加入对json格式的支持 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 
@@ -154,8 +162,34 @@
         </repository>
     </repositories>
 
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
     <modules>
         <module>eurekaservice</module>
+        <module>api-parent</module>
+        <module>member</module>
+        <module>common</module>
+        <module>api-parent</module>
     </modules>
 
 
